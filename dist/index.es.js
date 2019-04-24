@@ -1,24 +1,7 @@
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
 class Vector2D {
   constructor(x = 0, y = 0) {
-    _defineProperty(this, "x", void 0);
-
-    _defineProperty(this, "y", void 0);
-
+    this.x = void 0;
+    this.y = void 0;
     this.x = x;
     this.y = y;
   }
@@ -641,14 +624,10 @@ class Vector2D {
 
 class Vector3D {
   constructor(x = 0, y = 0, z = 0, w = 0) {
-    _defineProperty(this, "x", void 0);
-
-    _defineProperty(this, "y", void 0);
-
-    _defineProperty(this, "z", void 0);
-
-    _defineProperty(this, "w", void 0);
-
+    this.x = void 0;
+    this.y = void 0;
+    this.z = void 0;
+    this.w = void 0;
     this.x = x;
     this.y = y;
     this.z = z;
@@ -772,12 +751,9 @@ class Vector3D {
   }
 
 }
-
-_defineProperty(Vector3D, "X_AXIS", new Vector3D(1, 0, 0));
-
-_defineProperty(Vector3D, "Y_AXIS", new Vector3D(0, 1, 0));
-
-_defineProperty(Vector3D, "Z_AXIS", new Vector3D(0, 0, 1));
+Vector3D.X_AXIS = new Vector3D(1, 0, 0);
+Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
+Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
 
 class Matrix2D {
   /**
@@ -796,22 +772,14 @@ class Matrix2D {
   Matrix2D.SRT()
    */
   constructor(a = 1, b = 0, c = 0, d = 1, tx = 0, ty = 0) {
-    _defineProperty(this, "a", void 0);
-
-    _defineProperty(this, "b", void 0);
-
-    _defineProperty(this, "c", void 0);
-
-    _defineProperty(this, "d", void 0);
-
-    _defineProperty(this, "tx", void 0);
-
-    _defineProperty(this, "ty", void 0);
-
-    _defineProperty(this, "_temp", new Float32Array(9));
-
-    _defineProperty(this, "multiply", this.prepend);
-
+    this.a = void 0;
+    this.b = void 0;
+    this.c = void 0;
+    this.d = void 0;
+    this.tx = void 0;
+    this.ty = void 0;
+    this._temp = new Float32Array(9);
+    this.multiply = this.prepend;
     // 使用矩阵后乘列向量的方式执行变换，与glsl里顺序一致
     // |  a   b   tx |      x
     // |  c   d   ty |  *   y
@@ -1251,40 +1219,23 @@ class Matrix3D {
   // ty
   // tz
   constructor(p11 = 1, p12 = 0, p13 = 0, p14 = 0, p21 = 0, p22 = 1, p23 = 0, p24 = 0, p31 = 0, p32 = 0, p33 = 1, p34 = 0, p41 = 0, p42 = 0, p43 = 0, p44 = 1) {
-    _defineProperty(this, "n11", 1);
-
-    _defineProperty(this, "n12", 0);
-
-    _defineProperty(this, "n13", 0);
-
-    _defineProperty(this, "n14", 0);
-
-    _defineProperty(this, "n21", 0);
-
-    _defineProperty(this, "n22", 1);
-
-    _defineProperty(this, "n23", 0);
-
-    _defineProperty(this, "n24", 0);
-
-    _defineProperty(this, "n31", 0);
-
-    _defineProperty(this, "n32", 0);
-
-    _defineProperty(this, "n33", 1);
-
-    _defineProperty(this, "n34", 0);
-
-    _defineProperty(this, "n41", 0);
-
-    _defineProperty(this, "n42", 0);
-
-    _defineProperty(this, "n43", 0);
-
-    _defineProperty(this, "n44", 1);
-
-    _defineProperty(this, "_temp", new Float32Array(16));
-
+    this.n11 = 1;
+    this.n12 = 0;
+    this.n13 = 0;
+    this.n14 = 0;
+    this.n21 = 0;
+    this.n22 = 1;
+    this.n23 = 0;
+    this.n24 = 0;
+    this.n31 = 0;
+    this.n32 = 0;
+    this.n33 = 1;
+    this.n34 = 0;
+    this.n41 = 0;
+    this.n42 = 0;
+    this.n43 = 0;
+    this.n44 = 1;
+    this._temp = new Float32Array(16);
     this.n11 = p11;
     this.n12 = p12;
     this.n13 = p13;
@@ -1509,3 +1460,4 @@ function topleft2D(width, height, flipY = true) {
 }
 
 export { Matrix2D, Matrix3D, Vector2D, Vector3D, center2D, topleft2D };
+//# sourceMappingURL=index.es.js.map

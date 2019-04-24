@@ -18,16 +18,18 @@ export default {
         resolve({ extensions }),
 
         // Compile TypeScript/JavaScript files
-        babel({ extensions }),
+        babel({ extensions, include: ['src/**/*'], runtimeHelpers: true }),
     ],
 
     output: [
         {
             file: pkg.main,
             format: 'cjs',
+            sourcemap: true
         },
         {
             file: pkg.module, // same as jsnext:main 
-            format: 'esm'
+            format: 'esm',
+            sourcemap: true
         }],
 };
